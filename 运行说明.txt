@@ -1,0 +1,4 @@
+1.环境：python3.6 安装tensorflow
+
+2.直接切换到根目标下：python neunet.py
+
