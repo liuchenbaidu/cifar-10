@@ -10,7 +10,9 @@ import cv2
 class Corpus:
     
     def __init__(self):
-        self.load_cifar10('data/CIFAR10_data')
+       # self.load_cifar10('data/CIFAR10_data')
+        self.load_cifar10('src/data/CIFAR10_data')
+
         self._split_train_valid(valid_rate=0.9)
         self.n_train = self.train_images.shape[0]
         self.n_valid = self.valid_images.shape[0]
@@ -30,7 +32,7 @@ class Corpus:
                 if 'Windows' in platform.platform():
                     cifar10 = pickle.load(fo, encoding='bytes')
                 elif 'Linux' in platform.platform():
-                    cifar10 = pickle.load(fo)
+                    cifar10 = pickle.load(fo,encoding='bytes')
             for i in range(len(cifar10[b"labels"])):
                 image = numpy.reshape(cifar10[b"data"][i], (3, 32, 32))
                 image = numpy.transpose(image, (1, 2, 0))
@@ -47,7 +49,7 @@ class Corpus:
                 if 'Windows' in platform.platform():
                     cifar10 = pickle.load(fo, encoding='bytes')
                 elif 'Linux' in platform.platform():
-                    cifar10 = pickle.load(fo)
+                    cifar10 = pickle.load(fo,encoding='bytes')
             for i in range(len(cifar10[b"labels"])):
                 image = numpy.reshape(cifar10[b"data"][i], (3, 32, 32))
                 image = numpy.transpose(image, (1, 2, 0))
