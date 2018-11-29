@@ -1,6 +1,7 @@
 1.环境：python3.6 安装tensorflow
 
-2.直接切换到根目标下：python neunet.py
+2.要在文件夹下新建目录，名字是“backup/cifar10-v20/”，这个目录用来保存生成模型，生成按照训练圈数进行保存，
+直接切换到根目标下：python neunet.py
 
 3.默认运行的训练20层的残差网络。
 
